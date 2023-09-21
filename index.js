@@ -5,10 +5,7 @@
 
   // Функция для обновления времени на таймере
   function updateTimer() {
-    var currentDate = new Date();
-
-    
-
+    let currentDate = new Date();
     if (currentDate < startTime) {
       // Вычисление оставшегося времени
       let timeDifference = startDate.getTime() - currentDate.getTime();
@@ -38,7 +35,7 @@
   }
 
   // Обновление времени каждую секунду
-  let timerInterval = setInterval(updateTimer, 1000);
+let timerInterval = setInterval(updateTimer, 1000);
 
 let thumbnails = document.querySelectorAll('.thumbnails img');
 let mainImage = document.querySelector('.main_image img');
@@ -46,21 +43,39 @@ let mainImage = document.querySelector('.main_image img');
 // Обновленный массив больших изображений
 let largeImages = [
   'media/taps_black.png',
+  'media/orange.png',
   'media/pink.png',
   'media/yellow.png',
-  'media/orange.png'
 ];
-
 // Добавляем обработчик события клика на каждое маленькое изображение
 thumbnails.forEach(function(thumbnail, index) {
   thumbnail.addEventListener('click', function() {
     // Получаем путь к большому изображению из массива
-    
     let largeImageSrc = largeImages[index];
-    console.log(largeImageSrc)
-    console.log(mainImage)
     // Заменяем большое изображение
     mainImage.setAttribute('src', largeImageSrc);
     
   });
 });
+
+let selctBtns = document.querySelector('.custom-select');
+let selctBtn = document.querySelectorAll('.custom-select');
+let options = Array.from(selctBtns.options);
+options.map((e)=>{
+  selctBtns.addEventListener('change', event =>{
+    let selectValue = event.target.value;
+    if (selectValue === 'option1'){
+      mainImage.setAttribute('src', largeImages[0]);
+    }
+    if (selectValue === 'option2'){
+      mainImage.setAttribute('src', largeImages[1]);
+    }
+    if (selectValue === 'option3'){
+      mainImage.setAttribute('src', largeImages[2]);
+    }
+    if (selectValue === 'option4'){
+      mainImage.setAttribute('src', largeImages[3]);
+    }
+  })
+})
+

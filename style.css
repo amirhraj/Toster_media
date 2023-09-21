@@ -17,11 +17,9 @@
   }
   body{
     font-family: "Gotham Pro" , sans-serif;
+    margin: 0;
+    padding: 0;
   
-    width: 390px;
-    height: 1096px;
-    margin-right: auto;
-    margin-left: auto;
     
   }
 
@@ -37,34 +35,8 @@
     height: 33px;
     background-color: #F19D2F;
   }
-  .header_text::before{
-    /* content: url(media/flag-no-svgrepo-com.svg); */
-    position: absolute;
-    top: 12px;
-    left: 25px;
-    content: '';
-    background-image: url(media/flag-no-svgrepo-com.svg);
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-    display: block;
-    width: 10px;
-    height: 10px;
 
-  }
-  .header_text::after{
-    /* content: url(media/flag-no-svgrepo-com.svg); */
-    position: absolute;
-    top: 12px;
-    right: 25px;
-    content: '';
-    background-image: url(media/flag-no-svgrepo-com.svg);
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-    display: block;
-    width: 10px;
-    height: 10px;
 
-  }
   .header_text h3{
     font-family: "Gotham Pro" , sans-serif;
     margin: 0;
